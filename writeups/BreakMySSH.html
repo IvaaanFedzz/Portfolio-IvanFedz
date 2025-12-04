@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteUp - BreakMySSH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">WriteUp</div>
+        <ul class="nav-links">
+            <li><a href="../index.html"><i class="fas fa-arrow-left"></i> Volver al Portafolio</a></li>
+        </ul>
+    </nav>
+
+    <section class="article-container">
+        
+        <header class="article-header">
+            <span class="badge easy">Muy Fácil</span>
+            <h1>Máquina: BreakMySSH</h1>
+            <div class="meta-info">
+                <span><i class="far fa-calendar"></i> 29/08/2024</span>
+                <span><i class="fas fa-user"></i> El Pingüino de Mario</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            
+            <p>Aquí escribes la introducción. Por ejemplo: Esta máquina de DockerLabs se centra en vulnerar SSH mediante fuerza bruta...</p>
+
+            <h2>1. Reconocimiento</h2>
+            <p>Primero escaneamos la red para ver puertos abiertos:</p>
+
+            <pre><code>nmap -p- --open -sS --min-rate 5000 172.17.0.2</code></pre>
+
+            <p>Vemos que el puerto 22 está abierto.</p>
+            
+            <div class="alert-box">
+                <strong>Nota:</strong> Recuerda cambiar la IP por la de tu máquina víctima.
+            </div>
+
+            <h2>2. Explotación</h2>
+            <p>Utilizamos Hydra para atacar el login:</p>
+            
+            <pre><code>hydra -l root -P rockyou.txt ssh://172.17.0.2</code></pre>
+
+            <p>¡Y conseguimos la contraseña!</p>
+
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Rafael Piedrahita</p>
+    </footer>
+
+</body>
+</html>

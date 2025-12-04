@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteUp - Trust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">WriteUp</div>
+        <ul class="nav-links">
+            <li><a href="../Portfolio.html"><i class="fas fa-arrow-left"></i> Volver al Portafolio</a></li>
+        </ul>
+    </nav>
+
+    <section class="article-container">
+        
+        <header class="article-header">
+            <span class="badge easy">Muy Fácil</span>
+            <h1>Máquina: Trust (Fuzzing y PrivEsc)</h1>
+            <div class="meta-info">
+                <span><i class="far fa-calendar"></i> 02/09/2024</span>
+                <span><i class="fas fa-user"></i> El Pingüino de Mario</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            
+            <p>Este desafío se centró en la fase de reconocimiento activo utilizando fuzzing en una aplicación web, seguido por una escalada de privilegios simple.</p>
+
+            <h2>1. Fuzzing y Descubrimiento</h2>
+            <p>Iniciamos el proceso usando Ffuf para buscar directorios y archivos ocultos en la web. El objetivo era encontrar una ruta que expusiera información sensible.</p>
+
+            <pre><code>ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u http://172.17.0.3/FUZZ -e .php,.html</code></pre>
+
+            <p>Descubrimos el directorio <code>/uploads</code> que permite la subida de archivos, lo cual es un vector de ataque potencial.</p>
+
+            <div class="alert-box">
+                <strong>Consejo:</strong> El fuzzing es crucial. Nunca te fíes de lo que ves a simple vista en una web.
+            </div>
+
+            <h2>2. Escalada de Privilegios</h2>
+            <p>Usamos un exploit conocido para el servidor web y conseguimos una shell de bajo privilegio. Para la escalada, aprovechamos un archivo de configuración mal protegido que tenía credenciales hardcodeadas, lo que nos permitió convertir la shell a root.</p>
+
+            <pre><code>cat /var/www/html/config.php</code></pre>
+            <pre><code>su root</code></pre>
+
+            <p>Tras obtener las credenciales, el acceso como administrador fue inmediato. Máquina completada.</p>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Rafael Piedrahita</p>
+    </footer>
+
+</body>
+</html>

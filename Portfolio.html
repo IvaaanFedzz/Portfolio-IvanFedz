@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Fernandez | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Portafolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#writeups">Write-ups</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="avatar-container">
+            <img src="avatar.png" alt="Avatar" class="avatar">
+        </div>
+        <h1>Desarrollador Backend & <span class="highlight">Ethical Hacker</span></h1>
+        <p class="subtitle">Especialista en arquitecturas backend robustas y seguridad informática. Apasionado por crear sistemas seguros.</p>
+        
+        <div class="buttons">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contactar</a>
+            <a href="https://github.com/IvaaanFedzz" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+
+        <div class="specialties-grid">
+            <div class="card">
+                <h3><i class="fas fa-server"></i> Desarrollo Backend</h3>
+                <p></p> APIs REST, Bases de datos (SQL/NoSQL) y Microservicios.</p>
+                <div class="tags">
+                    <span>Node.js</span> <span>Python</span> <span>Docker</span> <span>AWS</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-shield-alt"></i> Hacking Ético</h3>
+                <p>Pentesting web, Análisis de vulnerabilidades, OSINT y uso de herramientas de seguridad.</p>
+                <div class="tags">
+                    <span>Kali Linux</span> <span>Burp Suite</span> <span>Metasploit</span> <span>OWASP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-container">
+        <h2 class="section-title">Mis <span class="highlight">Habilidades</span></h2>
+        
+        <div class="skills-grid">
+            <div class="card skill-card">
+                <h3>Desarrollo Backend</h3>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Python</span><span>23%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 22%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Node.js</span><span>33%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 32%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>PostgreSQL</span><span>12%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 12%;"></div></div>
+                </div>
+            </div>
+
+            <div class="card skill-card">
+                <h3>Hacking Ético</h3>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Linux</span><span></span>90%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Burp Suite</span><span>80%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>OWASP Top 10</span><span>33%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 33%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="writeups" class="section-container">
+        <h2 class="section-title">WriteUps & <span class="highlight">Documentación</span></h2>
+        
+        <div class="stats-row">
+            <div class="stat-box"><span>2</span> WriteUps</div>
+            <div class="stat-box"><span>0</span> Visualizaciones</div>
+            <div class="stat-box"><span>2</span> Plataformas</div>
+        </div>
+
+        <div class="writeups-grid">
+            
+            <article class="writeup-card">
+                <div class="card-header">
+                    <span class="badge easy">Muy Fácil</span>
+                    <i class="fas fa-times close-icon"></i> </div>
+                <div class="card-body">
+                    <div class="card-img-placeholder">
+                        <i class="fas fa-user-secret"></i> </div>
+                    <h4>BreakMySSH</h4>
+                    <p class="author">Autor: El Pingüino de Mario</p>
+                    <p class="date">29/08/2024</p>
+                    <p class="desc">Resolución de la máquina BreakMySSH centrada en fuerza bruta y reconocimiento.</p>
+                    <div class="tags small">
+                        <span>SSH</span> <span>Brute Force</span> <span>Hydra</span>
+                    </div>
+                    <a href="writeups/breakmyssh.html" class="btn-read">Leer WriteUp</a>
+                </div>
+            </article>
+            
+            <article class="writeup-card">
+                <div class="card-header">
+                    <span class="badge easy">Muy Fácil</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-img-placeholder"><i class="fas fa-shield-virus"></i></div>
+                    <h4>Trust</h4>
+                    <p class="author">Autor: El Pingüino de Mario</p>
+                    <p class="date">02/09/2024</p>
+                    <p class="desc">Enfocada en Fuzzing web y escalada de privilegios.</p>
+                    <div class="tags small">
+                        <span>Fuzzing</span> <span>PrivEsc</span>
+                    </div>
+                    <a href="writeups/trust.html" class="btn-read">Leer WriteUp</a>
+                </div>
+            </article>
+
+            <article class="writeup-card">
+                <div class="card-header">
+                    <span class="badge medium">Medio</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-img-placeholder"><i class="fas fa-database"></i></div>
+                    <h4>Injection</h4>
+                    <p class="author">Autor: Luisillo_o</p>
+                    <p class="date">15/09/2024</p>
+                    <p class="desc">Resolución centrada en SQL Injection y explotación.</p>
+                    <div class="tags small">
+                        <span>SQLi</span> <span>Sudo</span>
+                    </div>
+                    <a href="writeups/injection.html" class="btn-read">Leer WriteUp</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section-container">
+        <h2 class="section-title">¿Hablamos de tu <span class="highlight">Proyecto</span>?</h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <h3>Envíame un mensaje</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="tu@email.com" required>
+                    </div>
+                    <select>
+                        <option>Selecciona una opción</option>
+                        <option>Auditoría de Seguridad</option>
+                        <option>Desarrollo Backend</option>
+                    </select>
+                    <input type="text" placeholder="Asunto" required>
+                    <textarea placeholder="Describe tu proyecto..." rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary full-width">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p>Correo</p>
+                        <span>ivanferma@icloud.com</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <p>Teléfono</p>
+                        <span>+34 620 68 17 63 </span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p>Ubicación</p>
+                        <span>Valladolid , España</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Todos los derechos reservados. Desarrollador Backend & Ethical Hacker</p>
+    </footer>
+
+</body>
+</html>
