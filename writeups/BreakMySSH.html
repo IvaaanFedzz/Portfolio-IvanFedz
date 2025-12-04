@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WriteUp - BreakMySSH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
+    <!-- Ruta correcta para el CSS en la carpeta padre -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">WriteUp</div>
         <ul class="nav-links">
+            <!-- Volver al archivo principal (index.html) -->
             <li><a href="../index.html"><i class="fas fa-arrow-left"></i> Volver al Portafolio</a></li>
         </ul>
     </nav>
@@ -27,33 +29,18 @@
             </div>
         </header>
 
+        <!-- Contenido Placeholder -->
         <div class="article-content">
-            
-            <p>Aquí escribes la introducción. Por ejemplo: Esta máquina de DockerLabs se centra en vulnerar SSH mediante fuerza bruta...</p>
-
-            <h2>1. Reconocimiento</h2>
-            <p>Primero escaneamos la red para ver puertos abiertos:</p>
-
-            <pre><code>nmap -p- --open -sS --min-rate 5000 172.17.0.2</code></pre>
-
-            <p>Vemos que el puerto 22 está abierto.</p>
-            
-            <div class="alert-box">
-                <strong>Nota:</strong> Recuerda cambiar la IP por la de tu máquina víctima.
+            <div class="alert-box coming-soon" style="margin-top: 50px; text-align: center; padding: 40px; border: 2px solid #5a189a; background-color: #3e176b;">
+                <h2><i class="fas fa-tools"></i> ¡Pronto Disponible!</h2>
+                <p style="font-size: 1.1em; margin-top: 15px;">Este WriteUp está siendo revisado y se publicará muy pronto. Vuelve a visitarme en unos días.</p>
             </div>
-
-            <h2>2. Explotación</h2>
-            <p>Utilizamos Hydra para atacar el login:</p>
-            
-            <pre><code>hydra -l root -P rockyou.txt ssh://172.17.0.2</code></pre>
-
-            <p>¡Y conseguimos la contraseña!</p>
-
-            </div>
+            <a href="../index.html" class="btn btn-primary full-width" style="margin-top: 30px; display: block; text-align: center;">Volver al Portafolio</a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 - Rafael Piedrahita</p>
+        <p>&copy; 2025 - Ivan Fernandez</p>
     </footer>
 
 </body>
