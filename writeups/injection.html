@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WriteUp - Injection</title>
+    <title>WriteUp - Trust</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Ruta correcta para el CSS en la carpeta padre -->
     <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
@@ -12,46 +14,34 @@
     <nav class="navbar">
         <div class="logo">WriteUp</div>
         <ul class="nav-links">
-            <li><a href="../Portfolio.html"><i class="fas fa-arrow-left"></i> Volver al Portafolio</a></li>
+            <!-- Volver al archivo principal (index.html) -->
+            <li><a href="../index.html"><i class="fas fa-arrow-left"></i> Volver al Portafolio</a></li>
         </ul>
     </nav>
 
     <section class="article-container">
         
         <header class="article-header">
-            <span class="badge medium">Medio</span>
-            <h1>Máquina: Injection (SQL Injection)</h1>
+            <span class="badge easy">Muy Fácil</span>
+            <h1>Máquina: Trust</h1>
             <div class="meta-info">
-                <span><i class="far fa-calendar"></i> 15/09/2024</span>
-                <span><i class="fas fa-user"></i> Luisillo_o</span>
+                <span><i class="far fa-calendar"></i> 02/09/2024</span>
+                <span><i class="fas fa-user"></i> El Pingüino de Mario</span>
             </div>
         </header>
 
+        <!-- Contenido Placeholder -->
         <div class="article-content">
-            
-            <p>Esta máquina de nivel medio exigió un conocimiento sólido de las bases de datos y la capacidad de explotar fallos de validación en los formularios web, centrándose en SQL Injection (SQLi).</p>
-
-            <h2>1. Explotación de SQLi</h2>
-            <p>Identificamos un campo de login vulnerable. Utilizamos un payload de inyección simple para bypassar la autenticación.</p>
-
-            <pre><code>' OR '1'='1' --</code></pre>
-
-            <p>Tras obtener acceso, el siguiente paso fue volcar la base de datos para obtener nombres de usuario y hashes de contraseñas. Utilizamos <code>sqlmap</code> para automatizar este proceso y garantizar una explotación completa.</p>
-
-            <pre><code>sqlmap -u "http://172.17.0.4/login.php" --forms --dump-all</code></pre>
-
-            <h2>2. Escalada Final (SUDO)</h2>
-            <p>Una vez dentro, encontramos que un script de Python se podía ejecutar como root usando la utilidad <code>sudo</code> sin necesidad de contraseña. Este tipo de fallo es común y permite una escalada trivial de privilegios.</p>
-
-            <pre><code>sudo /usr/bin/python /opt/admin_tool.py</code></pre>
-
-            <p>Modificamos el script para ejecutar una shell de bash como root y así obtener el control total de la máquina.</p>
-
+            <div class="alert-box coming-soon" style="margin-top: 50px; text-align: center; padding: 40px; border: 2px solid #5a189a; background-color: #3e176b;">
+                <h2><i class="fas fa-tools"></i> ¡Pronto Disponible!</h2>
+                <p style="font-size: 1.1em; margin-top: 15px;">Este WriteUp está siendo revisado y se publicará muy pronto. Vuelve a visitarme en unos días.</p>
+            </div>
+            <a href="../index.html" class="btn btn-primary full-width" style="margin-top: 30px; display: block; text-align: center;">Volver al Portafolio</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 - Rafael Piedrahita</p>
+        <p>&copy; 2025 - Ivan Fernandez</p>
     </footer>
 
 </body>
